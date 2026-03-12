@@ -28,6 +28,18 @@ ssh_public_key_path  = "/ruta/absoluta/a/tu/clave_ssh_local.pub"
 ```
 
 ## 🚀 Cómo desplegar la infraestructura
+Primero, si no tienes un par de llaves SSH, genera uno mediante el comando:
+
+```bash
+ssh-keygen -t ed25519 -C "nombre-del-par"
+```
+Guarda el par en la ruta (en Windows el path suele ser C:\Users\<usuario>/.ssh)
+
+Se van a haber generado:
+* id_ed25519: clave privada
+* id_ed25519.pub: clave pública
+
+En el archivo `terraform.tfvars`, indicamos el path a la clave pública
 
 Abre tu terminal, navega a la carpeta del proveedor y ejecuta el ciclo de vida de Terraform:
 
